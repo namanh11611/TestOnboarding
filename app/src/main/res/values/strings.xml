@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">HelloWorld2</string>
+    <string name="text_hello_world">Hello World!</string>
+    <string name="lang_en">English</string>
+    <string name="lang_vi">Vietnamese</string>
+    <string name="lang_fr">French</string>
+
+    <string name="default_web_client_id" translatable="false">768044362441-auenk0bt66987098iq66l4csku0p2gsj.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://hello-world-58bd1.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">768044362441</string>
+    <string name="google_api_key" translatable="false">AIzaSyA-1pjqcsEp0IKNaVWImoRjJC0sV0aKjpw</string>
+    <string name="google_app_id" translatable="false">1:768044362441:android:4a6e18fea1bf6a2b573b18</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA-1pjqcsEp0IKNaVWImoRjJC0sV0aKjpw</string>
+    <string name="google_storage_bucket" translatable="false">hello-world-58bd1.appspot.com</string>
+    <string name="project_id" translatable="false">hello-world-58bd1</string>
+
+    <string name="coccoc_onboard_title_1" translatable="false">Test title</string>
+    <string name="coccoc_onboard_title_2" translatable="false">Test title</string>
+    <string name="coccoc_onboard_title_3" translatable="false">Test title</string>
+    <string name="coccoc_onboard_desc_1" translatable="false">Test description</string>
+    <string name="coccoc_onboard_desc_2" translatable="false">Test description</string>
+    <string name="coccoc_onboard_desc_3" translatable="false">Test description</string>
+
+</resources>
