@@ -1,5 +1,5 @@
 <View xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="10dp"
-    android:layout_height="10dp"
-    android:layout_marginEnd="20dp"
+    android:layout_width="6dp"
+    android:layout_height="6dp"
+    android:layout_marginEnd="6dp"
     android:background="@drawable/bg_onboard_dot_inactive" />

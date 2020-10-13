@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemC
     private boolean mIsLoadingPremium;
     private View mViewLoading;
     private Timer mTimerAutoScroll;
-    private ImageView mImageLogo;
 
     // Test language
     private List<Language> mLanguageList;
@@ -61,8 +60,6 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemC
         mBtnLaunch.setOnClickListener(this::onLaunch);
 
         mViewLoading = findViewById(R.id.btnLoading);
-        mImageLogo = findViewById(R.id.imvLogo);
-        mImageLogo.setImageResource(R.drawable.coccoc_onboard_logo);
         mViewPager = findViewById(R.id.viewPager);
         setupOnboardData();
         mViewPager.setVisibility(View.VISIBLE);
@@ -195,15 +192,6 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemC
         super.onDestroy();
     }
 
-    public void onSkip(View v) {
-        maybeShowLanguageDialog();
-    }
-
-    public void onNext(View v) {
-        int nextPosition = (mPosition + 1) % mData.size();
-        mViewPager.setCurrentItem(nextPosition);
-    }
-
     private void onLaunch(View v) {
         maybeShowLanguageDialog();
     }
@@ -264,26 +252,26 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemC
     }
 
     private void startAutoScrollViewPager(ViewPager viewPager) {
-        mPageAutoScrollCount = 0;
-        final Handler handler = new Handler();
-        final Runnable Update = () -> {
-            if (mPageAutoScrollCount == mData.size()) {
-//                if (viewPager instanceof PremiumViewPager) {
-//                    ((PremiumViewPager) viewPager).setPagingEnabled(true);
-//                }
-                mTimerAutoScroll.cancel();
-                return;
-            }
-            viewPager.setCurrentItem(mPageAutoScrollCount++, true);
-        };
-
-        mTimerAutoScroll = new Timer();
-        mTimerAutoScroll.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                handler.post(Update);
-            }
-        }, 200, 2000);
+//        mPageAutoScrollCount = 0;
+//        final Handler handler = new Handler();
+//        final Runnable Update = () -> {
+//            if (mPageAutoScrollCount == mData.size()) {
+////                if (viewPager instanceof PremiumViewPager) {
+////                    ((PremiumViewPager) viewPager).setPagingEnabled(true);
+////                }
+//                mTimerAutoScroll.cancel();
+//                return;
+//            }
+//            viewPager.setCurrentItem(mPageAutoScrollCount++, true);
+//        };
+//
+//        mTimerAutoScroll = new Timer();
+//        mTimerAutoScroll.schedule(new TimerTask() {
+//            @Override
+//            public void run() {
+//                handler.post(Update);
+//            }
+//        }, 200, 2000);
     }
 
 }

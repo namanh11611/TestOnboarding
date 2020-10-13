@@ -1,8 +1,11 @@
 package com.coccoc.helloworld2.firstrun;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.coccoc.helloworld2.R;
 
 import java.util.List;
 
@@ -22,11 +25,22 @@ public class OnBoardPagerAdapter extends PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        OnBoardView view = new OnBoardView(mContext);
-        OnBoardData boardData = mData.get(position);
-        view.fetchData(boardData);
-        container.addView(view);
-        return view;
+        View v = null;
+        switch (position) {
+            case 0:
+                v = LayoutInflater.from(mContext).inflate(R.layout.coccoc_first_run_first, container, false);
+                break;
+            case 1:
+                v = LayoutInflater.from(mContext).inflate(R.layout.coccoc_first_run_second, container, false);
+                break;
+            case 2:
+                v = LayoutInflater.from(mContext).inflate(R.layout.coccoc_first_run_third, container, false);
+                break;
+            default:
+                break;
+        }
+        container.addView(v);
+        return v;
     }
 
     @Override

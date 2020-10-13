@@ -52,7 +52,7 @@ dependencies {
     implementation "androidx.asynclayoutinflater:asynclayoutinflater:${androidXSupportLibVersion}"
     implementation "androidx.cardview:cardview:${androidXSupportLibVersion}"
     implementation "androidx.concurrent:concurrent-futures:${androidXSupportLibVersion}"
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-rc1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
     implementation "androidx.collection:collection:1.1.0"
     implementation "androidx.coordinatorlayout:coordinatorlayout:${androidXSupportLibVersion}"
     implementation "androidx.customview:customview:${androidXSupportLibVersion}"        // custom view
