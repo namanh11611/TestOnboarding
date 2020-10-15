@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/first" />
+
+    <ConstraintSet android:id="@+id/second">
+        <Constraint
+            android:id="@id/textFilterNumberSpin1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toTopOf="@id/textFilterNumberSpin2"
+            motion:layout_constraintStart_toStartOf="@id/textFilterNumberSpin4" />
+        <Constraint
+            android:id="@id/textFilterNumberSpin2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toTopOf="@id/textFilterNumberSpin3"
+            motion:layout_constraintStart_toStartOf="@id/textFilterNumberSpin4" />
+        <Constraint
+            android:id="@id/textFilterNumberSpin3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toTopOf="@id/textFilterNumberSpin4"
+            motion:layout_constraintStart_toStartOf="@id/textFilterNumberSpin4" />
+        <Constraint
+            android:id="@id/textFilterNumberSpin4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+
+    <Transition
+        motion:constraintSetEnd="@id/second"
+        motion:constraintSetStart="@id/first"
+        motion:duration="1000"
+        motion:motionInterpolator="cubic(0.34, 1.56, 0.64, 1)">
+        <KeyFrameSet>
+            <KeyPosition
+                motion:framePosition="58"
+                motion:keyPositionType="pathRelative"
+                motion:motionTarget="@id/textFilterNumberSpin1"
+                motion:percentX="1.05">
+            </KeyPosition>
+            <KeyPosition
+                motion:framePosition="58"
+                motion:keyPositionType="pathRelative"
+                motion:motionTarget="@id/textFilterNumberSpin2"
+                motion:percentX="1.05">
+            </KeyPosition>
+            <KeyPosition
+                motion:framePosition="58"
+                motion:keyPositionType="pathRelative"
+                motion:motionTarget="@id/textFilterNumberSpin3"
+                motion:percentX="1.05">
+            </KeyPosition>
+            <KeyPosition
+                motion:framePosition="58"
+                motion:keyPositionType="pathRelative"
+                motion:motionTarget="@id/textFilterNumberSpin4"
+                motion:percentX="1.05">
+            </KeyPosition>
+        </KeyFrameSet>
+    </Transition>
+
+</MotionScene>

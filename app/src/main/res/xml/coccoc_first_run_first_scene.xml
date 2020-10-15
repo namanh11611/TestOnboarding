@@ -6,7 +6,7 @@
 
     <ConstraintSet android:id="@+id/second">
         <Constraint
-            android:id="@+id/iconVideo"
+            android:id="@id/iconVideo"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_marginBottom="95dp"
@@ -14,14 +14,14 @@
             motion:layout_constraintEnd_toEndOf="@id/layoutFilterAdsBanner"
             motion:layout_constraintStart_toStartOf="@id/layoutFilterAdsBanner" />
         <Constraint
-            android:id="@+id/iconSpeaker"
+            android:id="@id/iconSpeaker"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_marginEnd="95dp"
             motion:layout_constraintTop_toBottomOf="@id/guidelineHorizontal"
             motion:layout_constraintEnd_toStartOf="@id/guidelineVertical" />
         <Constraint
-            android:id="@+id/iconTv"
+            android:id="@id/iconTv"
             android:layout_width="64dp"
             android:layout_height="64dp"
             motion:layout_constraintEnd_toEndOf="@id/layoutFilterAdsBanner"
@@ -32,7 +32,7 @@
 
     <ConstraintSet
         android:id="@+id/third"
-        motion:deriveConstraintsFrom="@+id/second">
+        motion:deriveConstraintsFrom="@id/second">
         <Constraint
             android:id="@id/layoutFilterAdsSwitch"
             android:layout_width="236dp"
@@ -46,7 +46,7 @@
                 motion:customColorValue="#E1F2E5" />
         </Constraint>
         <Constraint
-            android:id="@+id/textFilterAdsSwitch"
+            android:id="@id/textFilterAdsSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -58,34 +58,34 @@
                 motion:customColorValue="#14842F" />
         </Constraint>
         <Constraint
-            android:id="@+id/switchFilterAds">
+            android:id="@id/switchFilterAds">
             <CustomAttribute
                 motion:attributeName="checked"
                 motion:customBoolean="true" />
         </Constraint>
         <Constraint
-            android:id="@+id/iconShieldOff"
+            android:id="@id/iconShieldOff"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="92dp"
             android:visibility="invisible"
             motion:layout_constraintStart_toStartOf="@id/layoutFilterAdsBanner"
-            motion:layout_constraintTop_toBottomOf="@id/layoutFilterAdsSwitch" />
+            motion:layout_constraintTop_toTopOf="@id/layoutFilterAdsBanner" />
         <Constraint
-            android:id="@+id/iconShieldOn"
+            android:id="@id/iconShieldOn"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="92dp"
             android:visibility="visible"
             motion:layout_constraintStart_toStartOf="@id/layoutFilterAdsBanner"
-            motion:layout_constraintTop_toBottomOf="@id/layoutFilterAdsSwitch" />
+            motion:layout_constraintTop_toTopOf="@id/layoutFilterAdsBanner" />
     </ConstraintSet>
 
     <ConstraintSet
         android:id="@+id/fourth"
-        motion:deriveConstraintsFrom="@+id/third">
+        motion:deriveConstraintsFrom="@id/third">
         <Constraint
             android:id="@id/layoutFilterAdsSwitch"
             android:layout_width="214dp"
@@ -95,22 +95,22 @@
 
     <ConstraintSet
         android:id="@+id/fifth"
-        motion:deriveConstraintsFrom="@+id/fourth">
+        motion:deriveConstraintsFrom="@id/fourth">
         <Constraint
-            android:id="@+id/iconVideo"
+            android:id="@id/iconVideo"
             android:layout_width="64dp"
             android:layout_height="64dp"
             motion:layout_constraintBottom_toTopOf="parent"
             motion:layout_constraintEnd_toEndOf="@id/layoutFilterAdsBanner"
             motion:layout_constraintStart_toStartOf="@id/layoutFilterAdsBanner" />
         <Constraint
-            android:id="@+id/iconSpeaker"
+            android:id="@id/iconSpeaker"
             android:layout_width="64dp"
             android:layout_height="64dp"
             motion:layout_constraintBottom_toBottomOf="@id/layoutFilterAdsBanner"
             motion:layout_constraintEnd_toStartOf="parent" />
         <Constraint
-            android:id="@+id/iconTv"
+            android:id="@id/iconTv"
             android:layout_width="64dp"
             android:layout_height="64dp"
             motion:layout_constraintBottom_toBottomOf="parent"
@@ -118,45 +118,11 @@
             motion:layout_constraintTop_toBottomOf="@id/layoutFilterAdsBanner" />
     </ConstraintSet>
 
-    <ConstraintSet
-        android:id="@+id/sixth"
-        motion:deriveConstraintsFrom="@+id/fifth">
-        <Constraint
-            android:id="@+id/text1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="80dp"
-            android:alpha="0"
-            motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintEnd_toEndOf="parent"
-            motion:layout_constraintStart_toStartOf="parent" />
-        <Constraint
-            android:id="@+id/text2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="60dp"
-            android:alpha="0"
-            motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintEnd_toEndOf="parent"
-            motion:layout_constraintStart_toStartOf="parent" />
-        <Constraint
-            android:id="@+id/text3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
-            android:alpha="1"
-            motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintEnd_toEndOf="parent"
-            motion:layout_constraintStart_toStartOf="parent" />
-    </ConstraintSet>
-
     <Transition
-        motion:constraintSetEnd="@+id/second"
+        motion:constraintSetEnd="@id/second"
         motion:constraintSetStart="@id/first"
         motion:motionInterpolator="cubic(0.34, 1.56, 0.64, 1)"
         motion:duration="1000">
-        <OnClick
-            motion:clickAction="toggle"/>
         <KeyFrameSet>
             <KeyAttribute
                 android:scaleX="1.5"
@@ -177,37 +143,21 @@
     </Transition>
 
     <Transition
-        android:id="@+id/second_to_third"
         motion:autoTransition="animateToEnd"
-        motion:constraintSetEnd="@+id/third"
-        motion:constraintSetStart="@+id/second"
-        motion:duration="1000" />
+        motion:constraintSetEnd="@id/third"
+        motion:constraintSetStart="@id/second"
+        motion:duration="500" />
 
     <Transition
-        android:id="@+id/third_to_fourth"
         motion:autoTransition="animateToEnd"
-        motion:constraintSetEnd="@+id/fourth"
-        motion:constraintSetStart="@+id/third"
-        motion:duration="1000" />
+        motion:constraintSetEnd="@id/fourth"
+        motion:constraintSetStart="@id/third"
+        motion:duration="500" />
 
     <Transition
-        android:id="@+id/fourth_to_fifth"
         motion:autoTransition="animateToEnd"
-        motion:constraintSetEnd="@+id/fifth"
-        motion:constraintSetStart="@+id/fourth"
-        motion:duration="1000" />
+        motion:constraintSetEnd="@id/fifth"
+        motion:constraintSetStart="@id/fourth"
+        motion:duration="500" />
 
-    <Transition
-        android:id="@+id/fifth_to_sixth"
-        motion:autoTransition="animateToEnd"
-        motion:constraintSetEnd="@+id/sixth"
-        motion:constraintSetStart="@+id/fifth">
-        <KeyFrameSet>
-            <KeyAttribute
-                motion:motionTarget="@id/text2"
-                motion:framePosition="50"
-                android:alpha="1">
-            </KeyAttribute>
-        </KeyFrameSet>
-    </Transition>
 </MotionScene>

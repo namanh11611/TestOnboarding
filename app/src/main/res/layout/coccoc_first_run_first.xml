@@ -66,7 +66,7 @@
             app:layout_constraintTop_toBottomOf="@id/guidelineHorizontal"
             app:layout_constraintEnd_toStartOf="@id/guidelineVertical" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <FrameLayout
             android:id="@+id/layoutFilterAdsBanner"
             android:layout_width="230dp"
             android:layout_height="242dp"
@@ -83,17 +83,71 @@
                 android:layout_marginTop="33dp"
                 android:background="#F5F5F5"
                 android:padding="16dp"
-                app:layout_constraintBottom_toBottomOf="parent">
+                android:layout_gravity="bottom">
+
+                <androidx.constraintlayout.motion.widget.MotionLayout
+                    android:id="@+id/layoutDataNumberSpin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    app:layoutDescription="@xml/coccoc_first_run_spin_data_number"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <TextView
+                        android:id="@+id/textSaveData1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="93.1"
+                        android:textColor="#444545"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textSaveData2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="94.1"
+                        android:textColor="#444545"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textSaveData1" />
+
+                    <TextView
+                        android:id="@+id/textSaveData3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="95.1"
+                        android:textColor="#444545"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textSaveData2" />
+
+                    <TextView
+                        android:id="@+id/textSaveData4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="96.3"
+                        android:textColor="#444545"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textSaveData3" />
+
+                </androidx.constraintlayout.motion.widget.MotionLayout>
 
                 <TextView
-                    android:id="@+id/textSaveData"
+                    android:id="@+id/textSaveDataUnit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="93.1MB"
+                    android:text="MB"
                     android:textColor="#444545"
                     android:textSize="14sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/layoutDataNumberSpin"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
@@ -104,17 +158,60 @@
                     android:textColor="#6E7171"
                     android:textSize="10sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/textSaveData" />
+                    app:layout_constraintTop_toBottomOf="@id/layoutDataNumberSpin" />
+
+                <androidx.constraintlayout.motion.widget.MotionLayout
+                    android:id="@+id/layoutTimeNumberSpin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    app:layoutDescription="@xml/coccoc_first_run_spin_time_number"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/guidelineSave">
+
+                    <TextView
+                        android:id="@+id/textSaveTime1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="82"
+                        android:textColor="#444545"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textSaveTime2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="83"
+                        android:textColor="#444545"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textSaveTime1" />
+
+                    <TextView
+                        android:id="@+id/textSaveTime3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="84"
+                        android:textColor="#444545"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textSaveTime2" />
+
+                </androidx.constraintlayout.motion.widget.MotionLayout>
 
                 <TextView
-                    android:id="@+id/textSaveTime"
+                    android:id="@+id/textSaveTimeUnit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="82 giay"
+                    android:text=" giay"
                     android:textColor="#444545"
                     android:textSize="14sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@id/guidelineSave"
+                    app:layout_constraintStart_toEndOf="@id/layoutTimeNumberSpin"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
@@ -125,7 +222,7 @@
                     android:textColor="#6E7171"
                     android:textSize="10sp"
                     app:layout_constraintStart_toEndOf="@id/guidelineSave"
-                    app:layout_constraintTop_toBottomOf="@id/textSaveTime" />
+                    app:layout_constraintTop_toBottomOf="@id/textSaveTimeUnit" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guidelineSave"
@@ -136,7 +233,7 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
 
         <FrameLayout
             android:id="@+id/layoutFilterAdsSwitch"
@@ -172,32 +269,82 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="92dp"
             android:src="@drawable/ic_coccoc_first_run_shield_off"
             app:layout_constraintStart_toStartOf="@id/layoutFilterAdsBanner"
-            app:layout_constraintTop_toBottomOf="@id/layoutFilterAdsSwitch" />
+            app:layout_constraintTop_toTopOf="@id/layoutFilterAdsBanner" />
 
         <ImageView
             android:id="@+id/iconShieldOn"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="92dp"
             android:src="@drawable/ic_coccoc_first_run_shield_on"
             android:visibility="invisible"
             app:layout_constraintStart_toStartOf="@id/layoutFilterAdsBanner"
-            app:layout_constraintTop_toBottomOf="@id/layoutFilterAdsSwitch" />
+            app:layout_constraintTop_toTopOf="@id/layoutFilterAdsBanner" />
 
         <TextView
             android:id="@+id/textFilterNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="84dp"
-            android:text="19,234"
+            android:text="19,23"
             android:textColor="#000000"
             android:textSize="34sp"
             app:layout_constraintBottom_toTopOf="@id/guidelineHorizontal"
             app:layout_constraintStart_toStartOf="@id/layoutFilterAdsBanner" />
+
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:id="@+id/layoutFilterNumberSpin"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            app:layoutDescription="@xml/coccoc_first_run_spin_filter_number"
+            app:layout_constraintTop_toTopOf="@id/textFilterNumber"
+            app:layout_constraintStart_toEndOf="@id/textFilterNumber">
+
+            <TextView
+                android:id="@+id/textFilterNumberSpin1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4"
+                android:textColor="#000000"
+                android:textSize="34sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textFilterNumberSpin2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textColor="#000000"
+                android:textSize="34sp"
+                app:layout_constraintStart_toStartOf="@id/textFilterNumberSpin1"
+                app:layout_constraintTop_toBottomOf="@id/textFilterNumberSpin1" />
+
+            <TextView
+                android:id="@+id/textFilterNumberSpin3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6"
+                android:textColor="#000000"
+                android:textSize="34sp"
+                app:layout_constraintStart_toStartOf="@id/textFilterNumberSpin1"
+                app:layout_constraintTop_toBottomOf="@id/textFilterNumberSpin2" />
+
+            <TextView
+                android:id="@+id/textFilterNumberSpin4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7"
+                android:textColor="#000000"
+                android:textSize="34sp"
+                app:layout_constraintStart_toStartOf="@id/textFilterNumberSpin1"
+                app:layout_constraintTop_toBottomOf="@id/textFilterNumberSpin3" />
+
+        </androidx.constraintlayout.motion.widget.MotionLayout>
 
         <TextView
             android:id="@+id/textFilter"
@@ -232,37 +379,6 @@
             app:layout_constraintEnd_toEndOf="@id/layoutFilterAdsBanner"
             app:layout_constraintStart_toEndOf="@id/layoutFilterAdsBanner"
             app:layout_constraintTop_toBottomOf="@id/layoutFilterAdsBanner" />
-
-        <TextView
-            android:id="@+id/text1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
-            android:text="Hello1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/text2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:alpha="0"
-            android:text="Hello2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/text3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0"
-            android:text="Hello3"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.motion.widget.MotionLayout>
 
