@@ -70,6 +70,21 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemC
         onPageSelected(0);
     }
 
+    private void calculate() {
+        float x = 0.58f;
+        double max = 100;
+        double temp, xmax = 0;
+        while (x < 10) {
+            temp = 2.70158 * Math.pow(x - 1, 3f) + 1.70158 * Math.pow(x - 1, 2) + 1;
+            if (temp < max) {
+                max = temp;
+                xmax = x;
+            }
+            x += 0.01;
+        }
+        Log.d("namanh11611", "max = " + max + " - " + xmax);
+    }
+
     private void testJson() {
         String value = "{\n"
                 + " \"interval_in_hours\": 10,\n"
