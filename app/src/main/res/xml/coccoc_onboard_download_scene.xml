@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/set_download_first" />
+
+    <ConstraintSet android:id="@+id/set_download_second">
+        <Constraint
+            android:id="@id/imgBackgroundButtonDownload"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginBottom="176dp"
+            android:layout_marginEnd="56dp"
+            android:alpha="0"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toBottomOf="@id/imgBackgroundVideo"
+            motion:layout_constraintEnd_toEndOf="@id/imgBackgroundVideo" />
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/set_download_third">
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/set_download_fourth"
+        motion:deriveConstraintsFrom="@id/set_download_third">
+        <Constraint
+            android:id="@id/layoutQualitySelected"
+            android:layout_width="190dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="72dp"
+            android:visibility="visible"
+            motion:layout_constraintStart_toStartOf="@id/layoutDownloadProcess"
+            motion:layout_constraintTop_toTopOf="@id/layoutDownloadProcess" />
+        <Constraint
+            android:id="@id/radio720_selected"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="78dp"
+            android:visibility="visible"
+            motion:layout_constraintStart_toStartOf="@id/layoutDownloadProcess"
+            motion:layout_constraintTop_toTopOf="@id/layoutDownloadProcess" />
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/set_download_fifth"
+        motion:deriveConstraintsFrom="@id/set_download_fourth">
+        <Constraint
+            android:id="@id/layoutQualitySelected"
+            android:layout_width="190dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="72dp"
+            android:visibility="invisible"
+            motion:layout_constraintStart_toStartOf="@id/layoutDownloadProcess"
+            motion:layout_constraintTop_toTopOf="@id/layoutDownloadProcess" />
+        <Constraint
+            android:id="@id/radio720_selected"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="78dp"
+            android:visibility="invisible"
+            motion:layout_constraintStart_toStartOf="@id/layoutDownloadProcess"
+            motion:layout_constraintTop_toTopOf="@id/layoutDownloadProcess" />
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/set_download_sixth"
+        motion:deriveConstraintsFrom="@id/set_download_fifth">
+        <Constraint
+            android:id="@id/layoutDownloadProcess"
+            android:layout_width="168dp"
+            android:layout_height="152dp"
+            motion:layout_constraintStart_toStartOf="@id/imgBackgroundVideo"
+            motion:layout_constraintTop_toTopOf="@id/imgBackgroundVideo">
+        </Constraint>
+    </ConstraintSet>
+
+    <!-- Show touch download button effect -->
+    <Transition
+        motion:constraintSetEnd="@id/set_download_second"
+        motion:constraintSetStart="@id/set_download_first"
+        motion:duration="1000">
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="1"
+                android:scaleX="1.1"
+                android:scaleY="1.1"
+                motion:framePosition="58"
+                motion:motionTarget="@id/imgBackgroundButtonDownload" />
+        </KeyFrameSet>
+    </Transition>
+
+    <!-- Nothing, wait to slide layout video's quality -->
+    <Transition
+        motion:autoTransition="animateToEnd"
+        motion:constraintSetEnd="@id/set_download_third"
+        motion:constraintSetStart="@id/set_download_second"
+        motion:duration="1000">
+    </Transition>
+
+    <!-- Select video's quality -->
+    <Transition
+        motion:autoTransition="animateToEnd"
+        motion:constraintSetEnd="@id/set_download_fourth"
+        motion:constraintSetStart="@id/set_download_third"
+        motion:duration="1000">
+    </Transition>
+
+    <!-- Hide layout selected -->
+    <Transition
+        motion:autoTransition="animateToEnd"
+        motion:constraintSetEnd="@id/set_download_fifth"
+        motion:constraintSetStart="@id/set_download_fourth"
+        motion:duration="100"
+        motion:motionInterpolator="cubic(0.34, 1.56, 0.64, 1)">
+    </Transition>
+
+    <!-- Move download layout from right to left -->
+    <Transition
+        motion:autoTransition="animateToEnd"
+        motion:constraintSetEnd="@id/set_download_sixth"
+        motion:constraintSetStart="@id/set_download_fifth"
+        motion:duration="1500"
+        motion:motionInterpolator="cubic(0.34, 1.56, 0.64, 1)">
+        <KeyFrameSet>
+            <KeyPosition
+                motion:framePosition="58"
+                motion:keyPositionType="pathRelative"
+                motion:motionTarget="@id/layoutDownloadProcess"
+                motion:percentX="1.1"/>
+        </KeyFrameSet>
+    </Transition>
+</MotionScene>

@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutOnboardDownload"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/coccoc_onboard_download_scene">
+
+    <TextView
+        android:id="@+id/textDownloadVideoDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="34dp"
+        android:layout_marginHorizontal="33dp"
+        android:text="Chon chat luong video de tai, tai sieu nhanh, xem lai video moi luc"
+        android:textColor="#444545"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textDownloadVideoTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginHorizontal="33dp"
+        android:text="Tai nhanh video"
+        android:textColor="#2A2B2B"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/textDownloadVideoDescription"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgBackgroundVideo"
+        android:layout_width="310dp"
+        android:layout_height="222dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/coccoc_onboard_download_background"
+        app:layout_constraintBottom_toTopOf="@id/textDownloadVideoTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgBackgroundButtonDownload"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:layout_marginBottom="199dp"
+        android:layout_marginEnd="79dp"
+        android:visibility="invisible"
+        android:src="@drawable/coccoc_onboard_download_touch"
+        app:layout_constraintBottom_toBottomOf="@id/imgBackgroundVideo"
+        app:layout_constraintEnd_toEndOf="@id/imgBackgroundVideo" />
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/layoutDownloadProcess"
+        android:layout_width="190dp"
+        android:layout_height="145dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginTop="39dp"
+        app:layoutDescription="@xml/coccoc_onboard_download_process_scene"
+        app:layout_constraintEnd_toEndOf="@id/imgBackgroundVideo"
+        app:layout_constraintTop_toTopOf="@id/imgBackgroundVideo">
+
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:id="@+id/layoutDownloadResult"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:visibility="invisible"
+            app:layoutDescription="@xml/coccoc_onboard_download_result_scene">
+
+            <ImageView
+                android:id="@+id/imgDownloading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_coccoc_onboard_downloading"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imgDownloaded"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/clip_onboard_icon_downloaded"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imgDownloadDone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_coccoc_onboard_download_done"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textDownloading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="Dang tai ve..."
+                android:textColor="#141515"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgDownloading" />
+
+            <TextView
+                android:id="@+id/textDownloadingData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="720p (43MB)"
+                android:textColor="#2A2B2B"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textDownloading" />
+
+        </androidx.constraintlayout.motion.widget.MotionLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutDownloadQuality"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#FFFFFF"
+            android:paddingVertical="14dp"
+            app:layout_constraintBottom_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/radio360"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="18dp"
+                android:src="@drawable/ic_coccoc_onboard_radio_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/radio480"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ic_coccoc_onboard_radio_button"
+                app:layout_constraintStart_toStartOf="@id/radio360"
+                app:layout_constraintTop_toBottomOf="@id/radio360" />
+
+            <ImageView
+                android:id="@+id/radio720"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ic_coccoc_onboard_radio_button"
+                app:layout_constraintStart_toStartOf="@id/radio360"
+                app:layout_constraintTop_toBottomOf="@id/radio480" />
+
+            <ImageView
+                android:id="@+id/radio1080"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ic_coccoc_onboard_radio_button"
+                app:layout_constraintStart_toStartOf="@id/radio360"
+                app:layout_constraintTop_toBottomOf="@id/radio720" />
+
+            <TextView
+                android:id="@+id/text360"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:text="360p"
+                android:textColor="#2A2B2B"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/radio360"
+                app:layout_constraintStart_toEndOf="@id/radio360"
+                app:layout_constraintTop_toTopOf="@id/radio360" />
+
+            <TextView
+                android:id="@+id/unit360"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="45 MB"
+                android:textColor="#848687"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/radio360"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/radio360" />
+
+            <TextView
+                android:id="@+id/text480"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:text="480p"
+                android:textColor="#2A2B2B"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/radio480"
+                app:layout_constraintStart_toEndOf="@id/radio480"
+                app:layout_constraintTop_toTopOf="@id/radio480" />
+
+            <TextView
+                android:id="@+id/unit480"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="67 MB"
+                android:textColor="#848687"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/radio480"
+                app:layout_constraintEnd_toEndOf="@id/unit360"
+                app:layout_constraintTop_toTopOf="@id/radio480" />
+
+            <TextView
+                android:id="@+id/text720"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:text="720p"
+                android:textColor="#2A2B2B"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/radio720"
+                app:layout_constraintStart_toEndOf="@id/radio720"
+                app:layout_constraintTop_toTopOf="@id/radio720" />
+
+            <TextView
+                android:id="@+id/unit720"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="78 MB"
+                android:textColor="#848687"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/radio720"
+                app:layout_constraintEnd_toEndOf="@id/unit360"
+                app:layout_constraintTop_toTopOf="@id/radio720" />
+
+            <TextView
+                android:id="@+id/text1080"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:text="1080p"
+                android:textColor="#2A2B2B"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/radio1080"
+                app:layout_constraintStart_toEndOf="@id/radio1080"
+                app:layout_constraintTop_toTopOf="@id/radio1080" />
+
+            <TextView
+                android:id="@+id/unit1080"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="123 MB"
+                android:textColor="#848687"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/radio1080"
+                app:layout_constraintEnd_toEndOf="@id/unit360"
+                app:layout_constraintTop_toTopOf="@id/radio1080" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+    <FrameLayout
+        android:id="@+id/layoutQualitySelected"
+        android:layout_width="190dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="72dp"
+        android:background="#594FBA69"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@id/layoutDownloadProcess"
+        app:layout_constraintTop_toTopOf="@id/layoutDownloadProcess" />
+
+    <ImageView
+        android:id="@+id/radio720_selected"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="78dp"
+        android:visibility="invisible"
+        android:src="@drawable/ic_coccoc_onboard_radio_button_selected"
+        app:layout_constraintStart_toStartOf="@id/layoutDownloadProcess"
+        app:layout_constraintTop_toTopOf="@id/layoutDownloadProcess" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

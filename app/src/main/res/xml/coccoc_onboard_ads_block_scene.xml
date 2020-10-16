@@ -9,16 +9,17 @@
             android:id="@id/iconVideo"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:layout_marginBottom="95dp"
-            motion:layout_constraintBottom_toTopOf="@id/guidelineHorizontal"
+            android:layout_marginBottom="224dp"
+            motion:layout_constraintBottom_toBottomOf="@id/layoutFilterAdsBanner"
             motion:layout_constraintEnd_toEndOf="@id/layoutFilterAdsBanner"
             motion:layout_constraintStart_toStartOf="@id/layoutFilterAdsBanner" />
         <Constraint
             android:id="@id/iconSpeaker"
             android:layout_width="64dp"
             android:layout_height="64dp"
+            android:layout_marginBottom="50dp"
             android:layout_marginEnd="95dp"
-            motion:layout_constraintTop_toBottomOf="@id/guidelineHorizontal"
+            motion:layout_constraintBottom_toBottomOf="@id/layoutFilterAdsBanner"
             motion:layout_constraintEnd_toStartOf="@id/guidelineVertical" />
         <Constraint
             android:id="@id/iconTv"
@@ -37,10 +38,10 @@
             android:id="@id/layoutFilterAdsSwitch"
             android:layout_width="236dp"
             android:layout_height="52dp"
-            android:layout_marginBottom="63dp"
-            motion:layout_constraintBottom_toTopOf="@id/guidelineHorizontal"
+            android:layout_marginTop="6dp"
             motion:layout_constraintEnd_toEndOf="parent"
-            motion:layout_constraintStart_toStartOf="parent" >
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="@id/layoutFilterAdsBanner">
             <CustomAttribute
                 motion:attributeName="backgroundColor"
                 motion:customColorValue="#E1F2E5" />
@@ -90,7 +91,7 @@
             android:id="@id/layoutFilterAdsSwitch"
             android:layout_width="214dp"
             android:layout_height="48dp"
-            android:layout_marginBottom="65dp" />
+            android:layout_marginTop="8dp" />
     </ConstraintSet>
 
     <ConstraintSet

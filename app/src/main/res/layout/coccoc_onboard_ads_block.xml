@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutOnboardAdsBlock"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/coccoc_onboard_ads_block_scene">
+
+    <TextView
+        android:id="@+id/textFilterAdsDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="34dp"
+        android:layout_marginHorizontal="33dp"
+        android:text="Loc cac quang cao gay gian doan khi ban luot web"
+        android:textColor="#444545"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textFilterAdsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginHorizontal="33dp"
+        android:text="Loc quang cao"
+        android:textColor="#2A2B2B"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/textFilterAdsDescription"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <ImageView
+        android:id="@+id/iconSpeaker"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="59dp"
+        android:layout_marginEnd="104dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_coccoc_onboard_speaker"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/layoutFilterAdsBanner"
+        app:layout_constraintEnd_toStartOf="@id/guidelineVertical" />
+
+    <FrameLayout
+        android:id="@+id/layoutFilterAdsBanner"
+        android:layout_width="230dp"
+        android:layout_height="242dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@id/textFilterAdsTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutFilterAdsSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="33dp"
+            android:background="#F5F5F5"
+            android:padding="16dp"
+            android:layout_gravity="bottom">
+
+            <androidx.constraintlayout.motion.widget.MotionLayout
+                android:id="@+id/layoutDataNumberSpin"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                app:layoutDescription="@xml/coccoc_onboard_spin_data_number"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/textSaveData1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="93.1"
+                    android:textColor="#444545"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textSaveData2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="94.1"
+                    android:textColor="#444545"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textSaveData1" />
+
+                <TextView
+                    android:id="@+id/textSaveData3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="95.1"
+                    android:textColor="#444545"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textSaveData2" />
+
+                <TextView
+                    android:id="@+id/textSaveData4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="96.3"
+                    android:textColor="#444545"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textSaveData3" />
+
+            </androidx.constraintlayout.motion.widget.MotionLayout>
+
+            <TextView
+                android:id="@+id/textSaveDataUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MB"
+                android:textColor="#444545"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/layoutDataNumberSpin"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textSaveDataDes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Du lieu tiet kiem"
+                android:textColor="#6E7171"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutDataNumberSpin" />
+
+            <androidx.constraintlayout.motion.widget.MotionLayout
+                android:id="@+id/layoutTimeNumberSpin"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                app:layoutDescription="@xml/coccoc_onboard_spin_time_number"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guidelineSave">
+
+                <TextView
+                    android:id="@+id/textSaveTime1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="82"
+                    android:textColor="#444545"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textSaveTime2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="83"
+                    android:textColor="#444545"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textSaveTime1" />
+
+                <TextView
+                    android:id="@+id/textSaveTime3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="84"
+                    android:textColor="#444545"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textSaveTime2" />
+
+            </androidx.constraintlayout.motion.widget.MotionLayout>
+
+            <TextView
+                android:id="@+id/textSaveTimeUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" giay"
+                android:textColor="#444545"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/layoutTimeNumberSpin"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textSaveTimeDes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thoi gian tiet kiem"
+                android:textColor="#6E7171"
+                android:textSize="10sp"
+                app:layout_constraintStart_toEndOf="@id/guidelineSave"
+                app:layout_constraintTop_toBottomOf="@id/textSaveTimeUnit" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.58" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/layoutFilterAdsSwitch"
+        android:layout_width="214dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="#F5F5F5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/layoutFilterAdsBanner" />
+
+    <TextView
+        android:id="@+id/textFilterAdsSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Loc quang cao"
+        app:layout_constraintBottom_toBottomOf="@id/layoutFilterAdsSwitch"
+        app:layout_constraintStart_toStartOf="@id/layoutFilterAdsSwitch"
+        app:layout_constraintTop_toTopOf="@id/layoutFilterAdsSwitch" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchFilterAds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/layoutFilterAdsSwitch"
+        app:layout_constraintEnd_toEndOf="@id/layoutFilterAdsSwitch"
+        app:layout_constraintTop_toTopOf="@id/layoutFilterAdsSwitch" />
+
+    <ImageView
+        android:id="@+id/iconShieldOff"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="92dp"
+        android:src="@drawable/ic_coccoc_onboard_shield_off"
+        app:layout_constraintStart_toStartOf="@id/layoutFilterAdsBanner"
+        app:layout_constraintTop_toTopOf="@id/layoutFilterAdsBanner" />
+
+    <ImageView
+        android:id="@+id/iconShieldOn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="92dp"
+        android:src="@drawable/ic_coccoc_onboard_shield_on"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@id/layoutFilterAdsBanner"
+        app:layout_constraintTop_toTopOf="@id/layoutFilterAdsBanner" />
+
+    <TextView
+        android:id="@+id/textFilterNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="83dp"
+        android:text="19,23"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="@id/layoutFilterAdsBanner"
+        app:layout_constraintTop_toTopOf="@id/layoutFilterAdsBanner" />
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/layoutFilterNumberSpin"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        app:layoutDescription="@xml/coccoc_onboard_spin_filter_number"
+        app:layout_constraintTop_toTopOf="@id/textFilterNumber"
+        app:layout_constraintStart_toEndOf="@id/textFilterNumber">
+
+        <TextView
+            android:id="@+id/textFilterNumberSpin1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textFilterNumberSpin2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            app:layout_constraintStart_toStartOf="@id/textFilterNumberSpin1"
+            app:layout_constraintTop_toBottomOf="@id/textFilterNumberSpin1" />
+
+        <TextView
+            android:id="@+id/textFilterNumberSpin3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            app:layout_constraintStart_toStartOf="@id/textFilterNumberSpin1"
+            app:layout_constraintTop_toBottomOf="@id/textFilterNumberSpin2" />
+
+        <TextView
+            android:id="@+id/textFilterNumberSpin4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            app:layout_constraintStart_toStartOf="@id/textFilterNumberSpin1"
+            app:layout_constraintTop_toBottomOf="@id/textFilterNumberSpin3" />
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+    <TextView
+        android:id="@+id/textFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quang cao da loc"
+        android:textColor="#444545"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/textFilterNumber"
+        app:layout_constraintTop_toBottomOf="@id/textFilterNumber" />
+
+    <ImageView
+        android:id="@+id/iconVideo"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_coccoc_onboard_video_ads"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/layoutFilterAdsBanner"
+        app:layout_constraintEnd_toEndOf="@id/layoutFilterAdsBanner"
+        app:layout_constraintStart_toStartOf="@id/layoutFilterAdsBanner" />
+
+    <ImageView
+        android:id="@+id/iconTv"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_coccoc_onboard_tv_ads"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/layoutFilterAdsBanner"
+        app:layout_constraintEnd_toEndOf="@id/layoutFilterAdsBanner"
+        app:layout_constraintStart_toEndOf="@id/layoutFilterAdsBanner"
+        app:layout_constraintTop_toBottomOf="@id/layoutFilterAdsBanner" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

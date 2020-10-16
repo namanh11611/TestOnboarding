@@ -41,26 +41,22 @@
                 motion:framePosition="58"
                 motion:keyPositionType="pathRelative"
                 motion:motionTarget="@id/textFilterNumberSpin1"
-                motion:percentX="1.05">
-            </KeyPosition>
+                motion:percentX="1.05" />
             <KeyPosition
                 motion:framePosition="58"
                 motion:keyPositionType="pathRelative"
                 motion:motionTarget="@id/textFilterNumberSpin2"
-                motion:percentX="1.05">
-            </KeyPosition>
+                motion:percentX="1.05" />
             <KeyPosition
                 motion:framePosition="58"
                 motion:keyPositionType="pathRelative"
                 motion:motionTarget="@id/textFilterNumberSpin3"
-                motion:percentX="1.05">
-            </KeyPosition>
+                motion:percentX="1.05" />
             <KeyPosition
                 motion:framePosition="58"
                 motion:keyPositionType="pathRelative"
                 motion:motionTarget="@id/textFilterNumberSpin4"
-                motion:percentX="1.05">
-            </KeyPosition>
+                motion:percentX="1.05" />
         </KeyFrameSet>
     </Transition>
 

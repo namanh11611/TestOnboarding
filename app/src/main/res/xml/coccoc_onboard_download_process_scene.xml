@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/set_download_process_first" />
+
+    <ConstraintSet android:id="@+id/set_download_process_second">
+        <Constraint
+            android:id="@id/layoutDownloadQuality"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+    
+    <ConstraintSet
+        android:id="@+id/set_download_process_third"
+        motion:deriveConstraintsFrom="@id/set_download_process_second">
+        <Constraint
+            android:id="@id/layoutDownloadResult"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible" />
+        <Constraint
+            android:id="@id/layoutDownloadQuality"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible" />
+    </ConstraintSet>
+
+    <!-- Slide layout video's quality from top to bottom -->
+    <Transition
+        motion:constraintSetEnd="@id/set_download_process_second"
+        motion:constraintSetStart="@id/set_download_process_first"
+        motion:duration="1000" />
+
+    <!-- Show layout downloading, hide layout video's quality -->
+    <Transition
+        motion:autoTransition="animateToEnd"
+        motion:constraintSetEnd="@id/set_download_process_third"
+        motion:constraintSetStart="@id/set_download_process_second"
+        motion:duration="100"
+        motion:motionInterpolator="cubic(0.34, 1.56, 0.64, 1)" />
+
+</MotionScene>

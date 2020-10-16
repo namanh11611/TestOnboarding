@@ -6,25 +6,19 @@
 
     <ConstraintSet android:id="@+id/second">
         <Constraint
-            android:id="@id/textSaveData1"
+            android:id="@id/textSaveTime1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            motion:layout_constraintBottom_toTopOf="@id/textSaveData2"
+            motion:layout_constraintBottom_toTopOf="@id/textSaveTime2"
             motion:layout_constraintStart_toStartOf="parent" />
         <Constraint
-            android:id="@id/textSaveData2"
+            android:id="@id/textSaveTime2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            motion:layout_constraintBottom_toTopOf="@id/textSaveData3"
+            motion:layout_constraintBottom_toTopOf="@id/textSaveTime3"
             motion:layout_constraintStart_toStartOf="parent" />
         <Constraint
-            android:id="@id/textSaveData3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            motion:layout_constraintBottom_toTopOf="@id/textSaveData4"
-            motion:layout_constraintStart_toStartOf="parent" />
-        <Constraint
-            android:id="@id/textSaveData4"
+            android:id="@id/textSaveTime3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             motion:layout_constraintStart_toStartOf="parent"
@@ -40,27 +34,18 @@
             <KeyPosition
                 motion:framePosition="58"
                 motion:keyPositionType="pathRelative"
-                motion:motionTarget="@id/textSaveData1"
-                motion:percentX="1.05">
-            </KeyPosition>
+                motion:motionTarget="@id/textSaveTime1"
+                motion:percentX="1.05" />
             <KeyPosition
                 motion:framePosition="58"
                 motion:keyPositionType="pathRelative"
-                motion:motionTarget="@id/textSaveData2"
-                motion:percentX="1.05">
-            </KeyPosition>
+                motion:motionTarget="@id/textSaveTime2"
+                motion:percentX="1.05" />
             <KeyPosition
                 motion:framePosition="58"
                 motion:keyPositionType="pathRelative"
-                motion:motionTarget="@id/textSaveData3"
-                motion:percentX="1.05">
-            </KeyPosition>
-            <KeyPosition
-                motion:framePosition="58"
-                motion:keyPositionType="pathRelative"
-                motion:motionTarget="@id/textSaveData4"
-                motion:percentX="1.05">
-            </KeyPosition>
+                motion:motionTarget="@id/textSaveTime3"
+                motion:percentX="1.05" />
         </KeyFrameSet>
     </Transition>
 
