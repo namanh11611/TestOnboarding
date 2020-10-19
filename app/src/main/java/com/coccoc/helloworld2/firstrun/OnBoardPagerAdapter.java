@@ -31,8 +31,10 @@ public class OnBoardPagerAdapter extends PagerAdapter {
     private MotionLayout mMotionLayoutDownloadResult;
     private ClipDrawable mClipDownloaded;
     private final Handler mHandlerDownloaded = new Handler();
-    private final Runnable animateImageDownloaded = this::doTheAnimation;
+    private final Runnable mAnimateImageDownloaded = this::doTheAnimation;
     private int mLevel;
+
+    private MotionLayout mMotionLayoutNews;
 
 
     public OnBoardPagerAdapter(Context context, List<OnBoardData> data) {
@@ -62,6 +64,7 @@ public class OnBoardPagerAdapter extends PagerAdapter {
                 break;
             case 2:
                 v = LayoutInflater.from(mContext).inflate(R.layout.coccoc_onboard_news, container, false);
+                mMotionLayoutNews = v.findViewById(R.id.layoutOnboardNews);
                 break;
             default:
                 break;
@@ -71,37 +74,72 @@ public class OnBoardPagerAdapter extends PagerAdapter {
     }
 
     public void startAnimation(int position) {
+        int delayTime = position == 0 ? 1000 : 500;
+        (new Handler()).postDelayed(() -> {
+            switch (position) {
+                case 0:
+                    mMotionLayoutAdsBlock.transitionToEnd();
+                    (new Handler()).postDelayed(() -> {
+                        mMotionLayoutSpinFilter.transitionToEnd();
+                        mMotionLayoutSpinData.transitionToEnd();
+                        mMotionLayoutSpinTime.transitionToEnd();
+                    }, 2000);
+                    break;
+                case 1:
+                    mMotionLayoutDownload.transitionToEnd();
+                    (new Handler()).postDelayed(() -> {
+                        mMotionLayoutDownloadProcess.transitionToEnd();
+                    }, 500);
+                    (new Handler()).postDelayed(() -> {
+                        mClipDownloaded.setLevel(0);
+                        mHandlerDownloaded.post(mAnimateImageDownloaded);
+                    }, 4000);
+                    break;
+                case 2:
+                    mMotionLayoutNews.transitionToEnd();
+                    break;
+            }
+        }, delayTime);
+    }
+
+    public void resetAnimation(int position) {
         switch (position) {
             case 0:
-                mMotionLayoutAdsBlock.transitionToEnd();
-                (new Handler()).postDelayed(() -> {
-                    mMotionLayoutSpinFilter.transitionToEnd();
-                    mMotionLayoutSpinData.transitionToEnd();
-                    mMotionLayoutSpinTime.transitionToEnd();
-                }, 2000);
+            case 2:
+                resetDownloadAnimation();
                 break;
             case 1:
-                mMotionLayoutDownload.transitionToEnd();
-                (new Handler()).postDelayed(() -> {
-                    mMotionLayoutDownloadProcess.transitionToEnd();
-                }, 500);
-                (new Handler()).postDelayed(() -> {
-                    mClipDownloaded.setLevel(0);
-                    mHandlerDownloaded.post(animateImageDownloaded);
-                }, 5000);
-                break;
-            case 2:
+                resetAdsBlockAnimation();
+                resetNewsAnimation();
                 break;
         }
+    }
+
+    private void resetAdsBlockAnimation() {
+        if (mMotionLayoutAdsBlock == null) return;
+        mMotionLayoutAdsBlock.transitionToStart();
+        mMotionLayoutSpinFilter.transitionToStart();
+        mMotionLayoutSpinData.transitionToStart();
+        mMotionLayoutSpinTime.transitionToStart();
+    }
+
+    private void resetDownloadAnimation() {
+        if (mMotionLayoutDownload == null) return;
+        mMotionLayoutDownload.transitionToStart();
+    }
+
+    private void resetNewsAnimation() {
+        if (mMotionLayoutNews == null) return;
+        mMotionLayoutNews.transitionToStart();
     }
 
     private void doTheAnimation() {
         mLevel += 1000;
         mClipDownloaded.setLevel(mLevel);
         if (mLevel <= 10000) {
-            mHandlerDownloaded.postDelayed(animateImageDownloaded, 50);
+            mHandlerDownloaded.postDelayed(mAnimateImageDownloaded, 50);
         } else {
-            mHandlerDownloaded.removeCallbacks(animateImageDownloaded);
+            mHandlerDownloaded.removeCallbacks(mAnimateImageDownloaded);
             mMotionLayoutDownloadResult.transitionToEnd();
         }
     }

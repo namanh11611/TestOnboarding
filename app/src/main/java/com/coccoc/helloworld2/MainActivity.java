@@ -254,11 +254,10 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemC
         setPageActive(position);
         selectPage(position);
 
-        (new Handler()).postDelayed(() -> {
-            if (mViewPager.getAdapter() instanceof OnBoardPagerAdapter) {
-                ((OnBoardPagerAdapter) mViewPager.getAdapter()).startAnimation(position);
-            }
-        }, 1000);
+        if (mViewPager.getAdapter() instanceof OnBoardPagerAdapter) {
+            ((OnBoardPagerAdapter) mViewPager.getAdapter()).startAnimation(position);
+            ((OnBoardPagerAdapter) mViewPager.getAdapter()).resetAnimation(position);
+        }
     }
 
     @Override

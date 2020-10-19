@@ -2,9 +2,9 @@
 <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:motion="http://schemas.android.com/apk/res-auto">
 
-    <ConstraintSet android:id="@+id/start" />
+    <ConstraintSet android:id="@+id/set_download_result_first" />
 
-    <ConstraintSet android:id="@+id/end">
+    <ConstraintSet android:id="@+id/set_download_result_second">
         <Constraint android:id="@id/textDownloading">
             <CustomAttribute
                 motion:attributeName="text"
@@ -12,8 +12,64 @@
         </Constraint>
     </ConstraintSet>
 
+    <ConstraintSet android:id="@+id/set_download_result_third">
+        <Constraint
+            android:id="@id/imgDownloading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:visibility="invisible"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@id/imgDownloaded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:visibility="invisible"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@id/imgDownloadDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:visibility="visible"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@id/layoutOpenFile"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="18dp"
+            android:visibility="visible"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/textDownloadingData" />
+        <Constraint
+            android:id="@id/textOpenFile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toBottomOf="@id/layoutOpenFile"
+            motion:layout_constraintEnd_toEndOf="@id/layoutOpenFile"
+            motion:layout_constraintStart_toStartOf="@id/layoutOpenFile"
+            motion:layout_constraintTop_toTopOf="@id/layoutOpenFile" />
+    </ConstraintSet>
+
     <Transition
-        motion:constraintSetEnd="@+id/end"
-        motion:constraintSetStart="@id/start"
+        motion:constraintSetEnd="@+id/set_download_result_second"
+        motion:constraintSetStart="@id/set_download_result_first"
+        motion:duration="1000" />
+
+    <Transition
+        motion:autoTransition="animateToEnd"
+        motion:constraintSetEnd="@+id/set_download_result_third"
+        motion:constraintSetStart="@id/set_download_result_second"
         motion:duration="1000" />
 </MotionScene>

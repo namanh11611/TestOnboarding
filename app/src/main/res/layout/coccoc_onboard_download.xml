@@ -96,7 +96,7 @@
                 android:id="@+id/imgDownloadDone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="26dp"
                 android:src="@drawable/ic_coccoc_onboard_download_done"
                 android:visibility="invisible"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -127,6 +127,32 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textDownloading" />
+
+            <FrameLayout
+                android:id="@+id/layoutOpenFile"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="18dp"
+                android:background="#E1F2E5"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textDownloadingData" />
+
+            <TextView
+                android:id="@+id/textOpenFile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mo tep"
+                android:textColor="#4FBA69"
+                android:textSize="14sp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/layoutOpenFile"
+                app:layout_constraintEnd_toEndOf="@id/layoutOpenFile"
+                app:layout_constraintStart_toStartOf="@id/layoutOpenFile"
+                app:layout_constraintTop_toTopOf="@id/layoutOpenFile" />
 
         </androidx.constraintlayout.motion.widget.MotionLayout>
 

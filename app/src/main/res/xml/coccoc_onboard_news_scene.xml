@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        android:id="@+id/transition_news_first"
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1500"
+        motion:motionInterpolator="cubic(0.34, 1.56, 0.64, 1)">
+        <KeyFrameSet>
+            <KeyPosition
+                motion:framePosition="58"
+                motion:keyPositionType="pathRelative"
+                motion:motionTarget="@id/imgNews1"
+                motion:percentX="1.1" />
+            <KeyPosition
+                motion:framePosition="58"
+                motion:keyPositionType="pathRelative"
+                motion:motionTarget="@id/imgNews2"
+                motion:percentX="1.1" />
+            <KeyPosition
+                motion:framePosition="58"
+                motion:keyPositionType="pathRelative"
+                motion:motionTarget="@id/imgNews3"
+                motion:percentX="1.1" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start"/>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@id/imgNews3"
+            android:layout_width="200dp"
+            android:layout_height="177dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="22dp"
+            motion:layout_constraintStart_toStartOf="@id/layoutNewsWrapper"
+            motion:layout_constraintTop_toTopOf="@id/layoutNewsWrapper" />
+
+        <Constraint
+            android:id="@id/imgNews2"
+            android:layout_width="166dp"
+            android:layout_height="171dp"
+            android:layout_marginStart="166dp"
+            android:layout_marginTop="85dp"
+            motion:layout_constraintStart_toStartOf="@id/layoutNewsWrapper"
+            motion:layout_constraintTop_toTopOf="@id/layoutNewsWrapper" />
+
+        <Constraint
+            android:id="@id/imgNews1"
+            android:layout_width="166dp"
+            android:layout_height="128dp"
+            android:layout_marginStart="89dp"
+            android:layout_marginTop="171dp"
+            motion:layout_constraintStart_toStartOf="@id/layoutNewsWrapper"
+            motion:layout_constraintTop_toTopOf="@id/layoutNewsWrapper" />
+    </ConstraintSet>
+</MotionScene>

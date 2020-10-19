@@ -77,8 +77,26 @@
         </Constraint>
     </ConstraintSet>
 
+    <ConstraintSet
+        android:id="@+id/set_download_seventh"
+        motion:deriveConstraintsFrom="@id/set_download_sixth">
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/set_download_eighth"
+        motion:deriveConstraintsFrom="@id/set_download_seventh">
+        <Constraint
+            android:id="@id/layoutDownloadProcess"
+            android:layout_width="168dp"
+            android:layout_height="188dp"
+            motion:layout_constraintStart_toStartOf="@id/imgBackgroundVideo"
+            motion:layout_constraintTop_toTopOf="@id/imgBackgroundVideo">
+        </Constraint>
+    </ConstraintSet>
+
     <!-- Show touch download button effect -->
     <Transition
+        android:id="@+id/transition_download_first"
         motion:constraintSetEnd="@id/set_download_second"
         motion:constraintSetStart="@id/set_download_first"
         motion:duration="1000">
@@ -97,7 +115,7 @@
         motion:autoTransition="animateToEnd"
         motion:constraintSetEnd="@id/set_download_third"
         motion:constraintSetStart="@id/set_download_second"
-        motion:duration="1000">
+        motion:duration="500">
     </Transition>
 
     <!-- Select video's quality -->
@@ -105,7 +123,7 @@
         motion:autoTransition="animateToEnd"
         motion:constraintSetEnd="@id/set_download_fourth"
         motion:constraintSetStart="@id/set_download_third"
-        motion:duration="1000">
+        motion:duration="500">
     </Transition>
 
     <!-- Hide layout selected -->
@@ -131,5 +149,19 @@
                 motion:motionTarget="@id/layoutDownloadProcess"
                 motion:percentX="1.1"/>
         </KeyFrameSet>
+    </Transition>
+
+    <Transition
+        motion:autoTransition="animateToEnd"
+        motion:constraintSetEnd="@id/set_download_seventh"
+        motion:constraintSetStart="@id/set_download_sixth"
+        motion:duration="3000">
+    </Transition>
+
+    <Transition
+        motion:autoTransition="animateToEnd"
+        motion:constraintSetEnd="@id/set_download_eighth"
+        motion:constraintSetStart="@id/set_download_seventh"
+        motion:duration="1000">
     </Transition>
 </MotionScene>
