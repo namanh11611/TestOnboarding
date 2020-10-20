@@ -59,10 +59,27 @@
                 motion:customColorValue="#14842F" />
         </Constraint>
         <Constraint
-            android:id="@id/switchFilterAds">
+            android:id="@id/switchFilterAdsBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            motion:layout_constraintBottom_toBottomOf="@id/layoutFilterAdsSwitch"
+            motion:layout_constraintEnd_toEndOf="@id/layoutFilterAdsSwitch"
+            motion:layout_constraintTop_toTopOf="@id/layoutFilterAdsSwitch">
             <CustomAttribute
-                motion:attributeName="checked"
-                motion:customBoolean="true" />
+                motion:attributeName="tint"
+                motion:customColorValue="#4FBA69" />
+        </Constraint>
+        <Constraint
+            android:id="@id/switchFilterAdsDot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="@id/layoutFilterAdsSwitch"
+            motion:layout_constraintStart_toStartOf="@id/switchFilterAdsBar"
+            motion:layout_constraintTop_toTopOf="@id/layoutFilterAdsSwitch">
+            <CustomAttribute
+                motion:attributeName="tint"
+                motion:customColorDrawableValue="#4FBA69" />
         </Constraint>
         <Constraint
             android:id="@id/iconShieldOff"

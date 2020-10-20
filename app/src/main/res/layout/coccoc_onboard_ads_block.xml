@@ -240,13 +240,24 @@
         app:layout_constraintStart_toStartOf="@id/layoutFilterAdsSwitch"
         app:layout_constraintTop_toTopOf="@id/layoutFilterAdsSwitch" />
 
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/switchFilterAds"
+    <ImageView
+        android:id="@+id/switchFilterAdsBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
+        android:alpha="0.5"
+        android:src="@drawable/ic_coccoc_onboard_switch_bar"
         app:layout_constraintBottom_toBottomOf="@id/layoutFilterAdsSwitch"
         app:layout_constraintEnd_toEndOf="@id/layoutFilterAdsSwitch"
+        app:layout_constraintTop_toTopOf="@id/layoutFilterAdsSwitch" />
+
+    <ImageView
+        android:id="@+id/switchFilterAdsDot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_coccoc_onboard_switch_dot"
+        app:layout_constraintBottom_toBottomOf="@id/layoutFilterAdsSwitch"
+        app:layout_constraintStart_toStartOf="@id/switchFilterAdsBar"
         app:layout_constraintTop_toTopOf="@id/layoutFilterAdsSwitch" />
 
     <ImageView
