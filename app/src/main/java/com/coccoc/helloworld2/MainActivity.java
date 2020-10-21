@@ -14,7 +14,6 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.coccoc.helloworld2.firstrun.OnBoardData;
@@ -24,7 +23,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Timer;
-import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemClickListener,
         ViewPager.OnPageChangeListener, Dialog.OnDismissListener {
@@ -68,6 +66,41 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemC
 
         // Start with page 0
         onPageSelected(0);
+
+        findX();
+    }
+
+    private void findX() {
+        double x, y;
+//        float p1x = 0.34f, p1y = 1.56f, p2x = 0.64f, p2y = 1f;
+        float p1x = 0, p1y = 0, p2x = 0.09f, p2y = 1.21f;
+        Log.d("namanh11613", "3p1x = " + (3 * p1x));
+        Log.d("namanh11613", "3p2x-6p1x = " + (3 * p2x - 6 * p1x));
+        Log.d("namanh11613", "3p1x-3p2x+1 = " + (3 * p1x - 3 * p2x + 1));
+        Log.d("namanh11613", "3p1y = " + (3 * p1y));
+        Log.d("namanh11613", "3p2y-6p1y = " + (3 * p2y - 6 * p1y));
+        Log.d("namanh11613", "3p1y-3p2y+1 = " + (3 * p1y - 3 * p2y + 1));
+        solvePtb2(-789, 726, 0);
+        for (float i = 0.020152f; i <= 1; i += 0.05f) {
+            x = 3 * Math.pow(1-i, 2) * i * p1x + 3 * (1-i) * Math.pow(i, 2) * p2x + Math.pow(i, 3);
+            y = 3 * Math.pow(1-i, 2) * i * p1y + 3 * (1-i) * Math.pow(i, 2) * p2y + Math.pow(i, 3);
+            Log.d("namanh11613", "i = " + i + ", x = " + x + ", y = " + y);
+        }
+    }
+
+    private void solvePtb2(double a, double b, double c) {
+        double del = Math.pow(b, 2) - 4 * a * c;
+        if (del < 0) {
+            Log.d("namanh11613", "Vo nghiem");
+            return;
+        }
+        if (del == 0) {
+            Log.d("namanh11613", "Co 1 nghiem: " + (-b / (2*a)));
+            return;
+        }
+        double canDel = Math.sqrt(del);
+        Log.d("namanh11613", "Co 2 nghiem: " + ((-b + canDel) / (2*a)));
+        Log.d("namanh11613", "Co 2 nghiem: " + ((-b - canDel) / (2*a)));
     }
 
     private void calculate() {
@@ -271,27 +304,36 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemC
         mBtnLaunch.setVisibility(mIsLoadingPremium ? View.GONE : View.VISIBLE);
     }
 
+    int periodTime;
     private void startAutoScrollViewPager(ViewPager viewPager) {
-//        mPageAutoScrollCount = 0;
-//        final Handler handler = new Handler();
-//        final Runnable Update = () -> {
-//            if (mPageAutoScrollCount == mData.size()) {
-////                if (viewPager instanceof PremiumViewPager) {
-////                    ((PremiumViewPager) viewPager).setPagingEnabled(true);
-////                }
-//                mTimerAutoScroll.cancel();
-//                return;
-//            }
-//            viewPager.setCurrentItem(mPageAutoScrollCount++, true);
-//        };
-//
-//        mTimerAutoScroll = new Timer();
+        mPageAutoScrollCount = 0;
+        final Handler handler = new Handler();
+        final Runnable Update = () -> {
+            if (mPageAutoScrollCount == mData.size()) {
+//                if (viewPager instanceof PremiumViewPager) {
+//                    ((PremiumViewPager) viewPager).setPagingEnabled(true);
+//                }
+                mTimerAutoScroll.cancel();
+                return;
+            }
+            viewPager.setCurrentItem(mPageAutoScrollCount++, true);
+        };
+
+        mTimerAutoScroll = new Timer();
 //        mTimerAutoScroll.schedule(new TimerTask() {
 //            @Override
 //            public void run() {
 //                handler.post(Update);
 //            }
 //        }, 200, 2000);
+
+        (new Handler()).postDelayed(() -> {
+            viewPager.setCurrentItem(1, true);
+        }, 3000);
+
+        (new Handler()).postDelayed(() -> {
+            viewPager.setCurrentItem(2, true);
+        }, 7000);
     }
 
 }

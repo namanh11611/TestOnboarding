@@ -31,7 +31,7 @@
     <Transition
         motion:constraintSetEnd="@id/set_download_process_second"
         motion:constraintSetStart="@id/set_download_process_first"
-        motion:duration="600" />
+        motion:duration="300" />
 
     <!-- Show layout downloading, hide layout video's quality -->
     <Transition

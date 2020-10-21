@@ -2,34 +2,9 @@
 <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:motion="http://schemas.android.com/apk/res-auto">
 
-    <Transition
-        android:id="@+id/transition_news_first"
-        motion:constraintSetEnd="@+id/end"
-        motion:constraintSetStart="@id/start"
-        motion:duration="1500"
-        motion:motionInterpolator="cubic(0.34, 1.56, 0.64, 1)">
-        <KeyFrameSet>
-            <KeyPosition
-                motion:framePosition="58"
-                motion:keyPositionType="pathRelative"
-                motion:motionTarget="@id/imgNews1"
-                motion:percentX="1.1" />
-            <KeyPosition
-                motion:framePosition="58"
-                motion:keyPositionType="pathRelative"
-                motion:motionTarget="@id/imgNews2"
-                motion:percentX="1.1" />
-            <KeyPosition
-                motion:framePosition="58"
-                motion:keyPositionType="pathRelative"
-                motion:motionTarget="@id/imgNews3"
-                motion:percentX="1.1" />
-        </KeyFrameSet>
-    </Transition>
+    <ConstraintSet android:id="@+id/set_news_start" />
 
-    <ConstraintSet android:id="@+id/start"/>
-
-    <ConstraintSet android:id="@+id/end">
+    <ConstraintSet android:id="@+id/set_news_end">
         <Constraint
             android:id="@id/imgNews3"
             android:layout_width="200dp"
@@ -57,4 +32,35 @@
             motion:layout_constraintStart_toStartOf="@id/layoutNewsWrapper"
             motion:layout_constraintTop_toTopOf="@id/layoutNewsWrapper" />
     </ConstraintSet>
+
+    <StateSet>
+        <State
+            android:id="@+id/state_news_first"
+            motion:constraints="@id/set_news_start" />
+    </StateSet>
+
+    <Transition
+        android:id="@+id/transition_news_first"
+        motion:constraintSetEnd="@id/set_news_end"
+        motion:constraintSetStart="@id/set_news_start"
+        motion:duration="1500"
+        motion:motionInterpolator="cubic(0, 0, 0.09, 1.21)">
+        <KeyFrameSet>
+            <KeyPosition
+                motion:framePosition="80"
+                motion:keyPositionType="pathRelative"
+                motion:motionTarget="@id/imgNews1"
+                motion:percentX="1.025" />
+            <KeyPosition
+                motion:framePosition="80"
+                motion:keyPositionType="pathRelative"
+                motion:motionTarget="@id/imgNews2"
+                motion:percentX="1.025" />
+            <KeyPosition
+                motion:framePosition="80"
+                motion:keyPositionType="pathRelative"
+                motion:motionTarget="@id/imgNews3"
+                motion:percentX="1.025" />
+        </KeyFrameSet>
+    </Transition>
 </MotionScene>

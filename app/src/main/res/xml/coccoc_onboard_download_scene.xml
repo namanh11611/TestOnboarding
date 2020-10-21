@@ -17,9 +17,7 @@
             motion:layout_constraintEnd_toEndOf="@id/imgBackgroundVideo" />
     </ConstraintSet>
 
-    <ConstraintSet
-        android:id="@+id/set_download_third">
-    </ConstraintSet>
+    <ConstraintSet android:id="@+id/set_download_third" />
 
     <ConstraintSet
         android:id="@+id/set_download_fourth"
@@ -45,7 +43,11 @@
 
     <ConstraintSet
         android:id="@+id/set_download_fifth"
-        motion:deriveConstraintsFrom="@id/set_download_fourth">
+        motion:deriveConstraintsFrom="@id/set_download_fourth" />
+
+    <ConstraintSet
+        android:id="@+id/set_download_sixth"
+        motion:deriveConstraintsFrom="@id/set_download_fifth">
         <Constraint
             android:id="@id/layoutQualitySelected"
             android:layout_width="190dp"
@@ -66,8 +68,8 @@
     </ConstraintSet>
 
     <ConstraintSet
-        android:id="@+id/set_download_sixth"
-        motion:deriveConstraintsFrom="@id/set_download_fifth">
+        android:id="@+id/set_download_seventh"
+        motion:deriveConstraintsFrom="@id/set_download_sixth">
         <Constraint
             android:id="@id/layoutDownloadProcess"
             android:layout_width="168dp"
@@ -78,13 +80,12 @@
     </ConstraintSet>
 
     <ConstraintSet
-        android:id="@+id/set_download_seventh"
-        motion:deriveConstraintsFrom="@id/set_download_sixth">
-    </ConstraintSet>
+        android:id="@+id/set_download_eighth"
+        motion:deriveConstraintsFrom="@id/set_download_seventh" />
 
     <ConstraintSet
-        android:id="@+id/set_download_eighth"
-        motion:deriveConstraintsFrom="@id/set_download_seventh">
+        android:id="@+id/set_download_ninth"
+        motion:deriveConstraintsFrom="@id/set_download_eighth">
         <Constraint
             android:id="@id/layoutDownloadProcess"
             android:layout_width="168dp"
@@ -96,10 +97,9 @@
 
     <!-- Show touch download button effect -->
     <Transition
-        android:id="@+id/transition_download_first"
         motion:constraintSetEnd="@id/set_download_second"
         motion:constraintSetStart="@id/set_download_first"
-        motion:duration="1000">
+        motion:duration="300">
         <KeyFrameSet>
             <KeyAttribute
                 android:alpha="1"
@@ -110,37 +110,41 @@
         </KeyFrameSet>
     </Transition>
 
-    <!-- Nothing, wait to slide layout video's quality -->
+    <!-- Delay time, wait to slide layout video's quality -->
     <Transition
         motion:autoTransition="animateToEnd"
         motion:constraintSetEnd="@id/set_download_third"
         motion:constraintSetStart="@id/set_download_second"
-        motion:duration="500">
-    </Transition>
+        motion:duration="800" />
 
     <!-- Select video's quality -->
     <Transition
         motion:autoTransition="animateToEnd"
         motion:constraintSetEnd="@id/set_download_fourth"
         motion:constraintSetStart="@id/set_download_third"
-        motion:duration="500">
-    </Transition>
+        motion:duration="300" />
 
-    <!-- Hide layout selected -->
+    <!-- Delay time after select quality -->
     <Transition
         motion:autoTransition="animateToEnd"
         motion:constraintSetEnd="@id/set_download_fifth"
         motion:constraintSetStart="@id/set_download_fourth"
-        motion:duration="100"
-        motion:motionInterpolator="cubic(0.34, 1.56, 0.64, 1)">
-    </Transition>
+        motion:duration="200" />
 
-    <!-- Move download layout from right to left -->
+    <!-- Hide layout selected -->
     <Transition
         motion:autoTransition="animateToEnd"
         motion:constraintSetEnd="@id/set_download_sixth"
         motion:constraintSetStart="@id/set_download_fifth"
-        motion:duration="1500"
+        motion:duration="100"
+        motion:motionInterpolator="cubic(0.34, 1.56, 0.64, 1)" />
+
+    <!-- Move download layout from right to left -->
+    <Transition
+        motion:autoTransition="animateToEnd"
+        motion:constraintSetEnd="@id/set_download_seventh"
+        motion:constraintSetStart="@id/set_download_sixth"
+        motion:duration="500"
         motion:motionInterpolator="cubic(0.34, 1.56, 0.64, 1)">
         <KeyFrameSet>
             <KeyPosition
@@ -151,17 +155,17 @@
         </KeyFrameSet>
     </Transition>
 
-    <Transition
-        motion:autoTransition="animateToEnd"
-        motion:constraintSetEnd="@id/set_download_seventh"
-        motion:constraintSetStart="@id/set_download_sixth"
-        motion:duration="3000">
-    </Transition>
-
+    <!-- Delay time, wait process change icon download background -->
     <Transition
         motion:autoTransition="animateToEnd"
         motion:constraintSetEnd="@id/set_download_eighth"
         motion:constraintSetStart="@id/set_download_seventh"
-        motion:duration="1000">
-    </Transition>
+        motion:duration="1000" />
+
+    <!-- Increase download layout height -->
+    <Transition
+        motion:autoTransition="animateToEnd"
+        motion:constraintSetEnd="@id/set_download_ninth"
+        motion:constraintSetStart="@id/set_download_eighth"
+        motion:duration="150" />
 </MotionScene>

@@ -10,9 +10,6 @@
                 motion:attributeName="text"
                 motion:customStringValue="Da tai xong!" />
         </Constraint>
-    </ConstraintSet>
-
-    <ConstraintSet android:id="@+id/set_download_result_third">
         <Constraint
             android:id="@id/imgDownloading"
             android:layout_width="wrap_content"
@@ -65,11 +62,6 @@
     <Transition
         motion:constraintSetEnd="@+id/set_download_result_second"
         motion:constraintSetStart="@id/set_download_result_first"
-        motion:duration="1000" />
+        motion:duration="150" />
 
-    <Transition
-        motion:autoTransition="animateToEnd"
-        motion:constraintSetEnd="@+id/set_download_result_third"
-        motion:constraintSetStart="@id/set_download_result_second"
-        motion:duration="1000" />
 </MotionScene>

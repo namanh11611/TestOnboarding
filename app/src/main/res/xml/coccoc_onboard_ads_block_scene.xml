@@ -4,7 +4,7 @@
 
     <ConstraintSet android:id="@+id/set_ads_block_first" />
 
-    <ConstraintSet android:id="@+id/second">
+    <ConstraintSet android:id="@+id/set_ads_block_second">
         <Constraint
             android:id="@id/iconVideo"
             android:layout_width="64dp"
@@ -18,9 +18,9 @@
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_marginBottom="50dp"
-            android:layout_marginEnd="95dp"
+            android:translationX="-45dp"
             motion:layout_constraintBottom_toBottomOf="@id/layoutFilterAdsBanner"
-            motion:layout_constraintEnd_toStartOf="@id/guidelineVertical" />
+            motion:layout_constraintStart_toStartOf="@id/layoutFilterAdsBanner" />
         <Constraint
             android:id="@id/iconTv"
             android:layout_width="64dp"
@@ -32,8 +32,12 @@
     </ConstraintSet>
 
     <ConstraintSet
-        android:id="@+id/third"
-        motion:deriveConstraintsFrom="@id/second">
+        android:id="@+id/set_ads_block_third"
+        motion:deriveConstraintsFrom="@id/set_ads_block_second" />
+
+    <ConstraintSet
+        android:id="@+id/set_ads_block_fourth"
+        motion:deriveConstraintsFrom="@id/set_ads_block_third">
         <Constraint
             android:id="@id/layoutFilterAdsSwitch"
             android:layout_width="236dp"
@@ -63,11 +67,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
+            android:alpha="0.5"
             motion:layout_constraintBottom_toBottomOf="@id/layoutFilterAdsSwitch"
             motion:layout_constraintEnd_toEndOf="@id/layoutFilterAdsSwitch"
             motion:layout_constraintTop_toTopOf="@id/layoutFilterAdsSwitch">
             <CustomAttribute
-                motion:attributeName="tint"
+                motion:attributeName="colorFilter"
                 motion:customColorValue="#4FBA69" />
         </Constraint>
         <Constraint
@@ -75,11 +80,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="@id/layoutFilterAdsSwitch"
-            motion:layout_constraintStart_toStartOf="@id/switchFilterAdsBar"
+            motion:layout_constraintEnd_toEndOf="@id/switchFilterAdsBar"
             motion:layout_constraintTop_toTopOf="@id/layoutFilterAdsSwitch">
             <CustomAttribute
-                motion:attributeName="tint"
-                motion:customColorDrawableValue="#4FBA69" />
+                motion:attributeName="colorFilter"
+                motion:customColorValue="#4FBA69" />
         </Constraint>
         <Constraint
             android:id="@id/iconShieldOff"
@@ -102,8 +107,8 @@
     </ConstraintSet>
 
     <ConstraintSet
-        android:id="@+id/fourth"
-        motion:deriveConstraintsFrom="@id/third">
+        android:id="@+id/set_ads_block_fifth"
+        motion:deriveConstraintsFrom="@id/set_ads_block_fourth">
         <Constraint
             android:id="@id/layoutFilterAdsSwitch"
             android:layout_width="214dp"
@@ -112,8 +117,8 @@
     </ConstraintSet>
 
     <ConstraintSet
-        android:id="@+id/fifth"
-        motion:deriveConstraintsFrom="@id/fourth">
+        android:id="@+id/set_ads_block_sixth"
+        motion:deriveConstraintsFrom="@id/set_ads_block_fifth">
         <Constraint
             android:id="@id/iconVideo"
             android:layout_width="64dp"
@@ -136,12 +141,12 @@
             motion:layout_constraintTop_toBottomOf="@id/layoutFilterAdsBanner" />
     </ConstraintSet>
 
+    <!-- Show 3 icons -->
     <Transition
-        android:id="@+id/transition_ads_block_first"
-        motion:constraintSetEnd="@id/second"
+        motion:constraintSetEnd="@id/set_ads_block_second"
         motion:constraintSetStart="@id/set_ads_block_first"
         motion:motionInterpolator="cubic(0.34, 1.56, 0.64, 1)"
-        motion:duration="1000">
+        motion:duration="300">
         <KeyFrameSet>
             <KeyAttribute
                 android:scaleX="1.5"
@@ -161,22 +166,33 @@
         </KeyFrameSet>
     </Transition>
 
+    <!-- Delay time after show 3 icons -->
     <Transition
         motion:autoTransition="animateToEnd"
-        motion:constraintSetEnd="@id/third"
-        motion:constraintSetStart="@id/second"
+        motion:constraintSetEnd="@id/set_ads_block_third"
+        motion:constraintSetStart="@id/set_ads_block_second"
         motion:duration="500" />
+    
+    <!-- Scale up switch layout, set switch checked, change shield icon -->
+    <Transition
+        motion:autoTransition="animateToEnd"
+        motion:constraintSetEnd="@id/set_ads_block_fourth"
+        motion:constraintSetStart="@id/set_ads_block_third"
+        motion:duration="200" />
 
+    <!-- Scale down switch layout -->
     <Transition
         motion:autoTransition="animateToEnd"
-        motion:constraintSetEnd="@id/fourth"
-        motion:constraintSetStart="@id/third"
-        motion:duration="500" />
+        motion:constraintSetEnd="@id/set_ads_block_fifth"
+        motion:constraintSetStart="@id/set_ads_block_fourth"
+        motion:duration="200" />
 
+    <!-- Hide 3 icons -->
     <Transition
         motion:autoTransition="animateToEnd"
-        motion:constraintSetEnd="@id/fifth"
-        motion:constraintSetStart="@id/fourth"
-        motion:duration="500" />
+        motion:constraintSetEnd="@id/set_ads_block_sixth"
+        motion:constraintSetStart="@id/set_ads_block_fifth"
+        motion:duration="800"
+        motion:motionInterpolator="cubic(0.34, 1.56, 0.64, 1)" />
 
 </MotionScene>
