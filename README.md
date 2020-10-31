@@ -4,6 +4,5 @@ MotionLayout is a new class available in the ConstraintLayout 2.0 library to hel
 
 [Tutorial](https://developer.android.com/training/constraint-layout/motionlayout) by Google.
 
-Screenshot:
-
+## Screenshot
 ![alt text](assets/Screenrecorder.gif)

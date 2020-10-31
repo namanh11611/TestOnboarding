@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">Xin chào</string>
-    <string name="text_hello_world">Xin chào thế giới!</string>
-    <string name="lang_en">Tiếng Anh</string>
-    <string name="lang_vi">Tiếng Việt</string>
-    <string name="lang_fr">Tiếng Pháp</string>
-</resources>

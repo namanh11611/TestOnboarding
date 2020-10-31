@@ -1,4 +1,4 @@
-package com.coccoc.helloworld2;
+package com.coccoc.onboarding;
 
 import org.junit.Test;
 

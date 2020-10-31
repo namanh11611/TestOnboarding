@@ -15,7 +15,7 @@
     <item android:id="@android:id/background">
         <shape android:shape="rectangle">
             <corners android:radius="4dp" />
-            <solid android:color="@color/coccoc_green" />
+            <solid android:color="@color/colorPrimary" />
         </shape>
     </item>
 </ripple>

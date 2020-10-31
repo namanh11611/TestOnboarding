@@ -1,4 +1,4 @@
-package com.coccoc.helloworld2;
+package com.coccoc.onboarding;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.coccoc.helloworld2", appContext.getPackageName());
+        assertEquals("com.coccoc.onboarding", appContext.getPackageName());
     }
 }

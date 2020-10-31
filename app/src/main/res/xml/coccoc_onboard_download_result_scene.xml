@@ -8,7 +8,7 @@
         <Constraint android:id="@id/textDownloading">
             <CustomAttribute
                 motion:attributeName="text"
-                motion:customStringValue="Da tai xong!" />
+                motion:customStringValue="Downloaded!" />
         </Constraint>
         <Constraint
             android:id="@id/imgDownloading"
